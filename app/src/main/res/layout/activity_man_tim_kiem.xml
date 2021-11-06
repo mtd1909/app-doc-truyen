@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#FFF"
+    tools:context=".ManTimKiem">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="10"
+        android:orientation="horizontal">
+
+
+    <EditText
+        android:textColor="#040404"
+        android:textColorHint="#040404"
+        android:layout_margin="5dp"
+        android:id="@+id/timkiem"
+        android:hint="Search"
+        android:layout_weight="8"
+        android:layout_width="0dp"
+        android:layout_height="60dp">
+    </EditText>
+        <Button
+            android:layout_width="0dp"
+            android:id="@+id/btnSeach"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            android:text="Scan"/>
+    </LinearLayout>
+    <ListView
+        android:background="#03A9F4"
+        android:id="@+id/listviewTimKiem"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+    </ListView>
+
+</LinearLayout>
