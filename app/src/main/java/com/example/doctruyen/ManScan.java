@@ -1,7 +1,5 @@
 package com.example.doctruyen;
 
-import static com.example.doctruyen.R.layout.*;
-
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.Manifest;
@@ -29,7 +27,7 @@ import com.huawei.hms.ml.scan.HmsScanAnalyzerOptions;
 
 import java.util.ArrayList;
 
-public class ManTimKiem extends AppCompatActivity {
+public class ManScan extends AppCompatActivity {
 
     ListView listView;
 
@@ -43,7 +41,7 @@ public class ManTimKiem extends AppCompatActivity {
 
     databasedoctruyen databasedoctruyen;
 
-    Button btnSeach;
+    Button btnScan;
 
 
     private static final int DEFAULT_VIEW = 111;
@@ -51,12 +49,12 @@ public class ManTimKiem extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(activity_man_tim_kiem);
+        setContentView(R.layout.activity_man_scan);
 
         listView = findViewById(R.id.listviewTimKiem);
         edt = findViewById(R.id.timkiem);
 
-        btnSeach = findViewById(R.id.btnSeach);
+        btnScan = findViewById(R.id.btnScan);
 
         initList();
 
@@ -66,7 +64,7 @@ public class ManTimKiem extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
-                Intent intent = new Intent(ManTimKiem.this,ManNoiDung.class);
+                Intent intent = new Intent(ManScan.this,ManNoiDung.class);
                 String tent = arrayList.get(position).getTenTruyen();
                 String noidungt = arrayList.get(position).getNoiDung();
                 intent.putExtra("tentruyen",tent);
@@ -92,12 +90,14 @@ public class ManTimKiem extends AppCompatActivity {
                 filter(s.toString());
             }
         });
-        btnSeach.setOnClickListener(new View.OnClickListener() {
+        btnScan.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 // Display the scanning UI in Default View mode.
-                int result = ScanUtil.startScan(ManTimKiem.this, REQUEST_CODE_SCAN, new HmsScanAnalyzerOptions.Creator().setHmsScanTypes(HmsScan.ALL_SCAN_TYPE).create());
+                int result = ScanUtil.startScan(ManScan.this, REQUEST_CODE_SCAN,
+                        new HmsScanAnalyzerOptions.Creator().setHmsScanTypes(HmsScan.ALL_SCAN_TYPE).create());
             }
+
         });
     }
 
@@ -163,7 +163,9 @@ public class ManTimKiem extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, String[] permissions, int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        if (permissions == null || grantResults == null || grantResults.length < 2 || grantResults[0] != PackageManager.PERMISSION_GRANTED || grantResults[1] != PackageManager.PERMISSION_GRANTED) {
+        if (permissions == null || grantResults == null || grantResults.length < 2 ||
+                grantResults[0] != PackageManager.PERMISSION_GRANTED ||
+                grantResults[1] != PackageManager.PERMISSION_GRANTED) {
             return;
         }
     }

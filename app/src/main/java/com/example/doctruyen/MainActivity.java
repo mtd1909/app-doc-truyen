@@ -1,7 +1,6 @@
 package com.example.doctruyen;
 
 import androidx.annotation.NonNull;
-import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
@@ -11,7 +10,6 @@ import android.content.Intent;
 import android.database.Cursor;
 import android.os.Bundle;
 import android.util.Log;
-import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,7 +18,6 @@ import android.view.animation.AnimationUtils;
 import android.widget.AdapterView;
 import android.widget.ImageView;
 import android.widget.ListView;
-import android.widget.RelativeLayout;
 import android.widget.Toast;
 import android.widget.ViewFlipper;
 
@@ -257,7 +254,7 @@ public class MainActivity extends AppCompatActivity {
         // Nếu click vào icon tìm kiếm chuyển qua icon tìm kiếm
         switch (item.getItemId()) {
             case R.id.menu1:
-                Intent intent = new Intent(MainActivity.this, ManTimKiem.class);
+                Intent intent = new Intent(MainActivity.this, ManScan.class);
                 startActivity(intent);
                 break;
 

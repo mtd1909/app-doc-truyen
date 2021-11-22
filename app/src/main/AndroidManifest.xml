@@ -34,7 +34,7 @@
             android:name=".ManNoiDung"
             android:exported="true" />
         <activity
-            android:name=".ManTimKiem"
+            android:name=".ManScan"
             android:exported="true" />
         <activity
             android:name=".ManDangKy"

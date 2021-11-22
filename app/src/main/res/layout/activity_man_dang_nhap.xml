@@ -41,20 +41,22 @@
 
     <Button
         android:id="@+id/dangnhap"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Đăng nhập"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:backgroundTint="#2196F3">
     </Button>
 
     <Button
         android:id="@+id/dangky"
-        android:layout_width="wrap_content"
+        android:layout_width="200dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
         android:text="Đăng ký"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        android:backgroundTint="#2196F3">
     </Button>
 
 </LinearLayout>
