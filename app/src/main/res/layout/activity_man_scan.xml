@@ -47,7 +47,8 @@
             android:layout_width="match_parent"
             android:id="@+id/btnScan"
             android:layout_height="wrap_content"
-            android:text="Scan"/>
+            android:text="Scan"
+            android:backgroundTint="#2196F3"/>
 
     </LinearLayout>
 
